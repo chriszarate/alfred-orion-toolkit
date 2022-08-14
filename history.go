@@ -11,15 +11,15 @@ import (
 )
 
 var (
-	DBPath = "/Library/Safari/History.db"
+	DBPath = "/Library/Application Support/Orion/Defaults/history"
 	QUERY  = `
 SELECT history_items.id, title, url
 FROM history_items
-INNER JOIN history_visits
-ON history_visits.history_item = history_items.id
+INNER JOIN visits
+ON visits.history_item_id = history_items.id
 WHERE url LIKE ? OR title LIKE ?
 GROUP BY url
-ORDER BY visit_time DESC
+ORDER BY count(visits.visit_time) DESC
 `
 )
 
@@ -55,7 +55,7 @@ func searchHistory() error {
 			Subtitle(url.String).
 			Arg(url.String)
 	}
-	wf.WarnEmpty("No matching history found", "Try another?")
+	wf.WarnEmpty("No matching history found", "Try another search?")
 	wf.SendFeedback()
 	return nil
 }
