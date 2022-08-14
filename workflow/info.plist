@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.atbug.workflow.safari</string>
+	<string>org.zarate.workflow.orion</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -35,13 +35,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Addo Zhang</string>
+	<string>Chris Zarate</string>
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Safari Toolkit</string>
+	<string>Kagi Orion Toolkit</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -52,7 +52,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>open -a "/Applications/Safari.app" "{query}"</string>
+				<string>open -a "/Applications/Orion.app" "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -83,7 +83,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>sh</string>
+				<string>oh</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -95,15 +95,15 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./alfred-safari-toolkit history -q "{query}"</string>
+				<string>./alfred-orion-toolkit history -q "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search Safari's history</string>
+				<string>Search Orion's history</string>
 				<key>title</key>
-				<string>Safari History Search</string>
+				<string>Orion History Search</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -165,6 +165,6 @@
 	<key>version</key>
 	<string>1.0.3</string>
 	<key>webaddress</key>
-	<string>http://atbug.com</string>
+	<string>https://github.com/chriszarate/alfred-orion-toolkit</string>
 </dict>
 </plist>

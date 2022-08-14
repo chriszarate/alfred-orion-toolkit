@@ -1,4 +1,4 @@
-module github.com/addozhang/alfred-safari-toolkit
+module github.com/chriszarate/alfred-orion-toolkit
 
 go 1.17
 

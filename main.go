@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	repo  = "addozhang/alfred-safari-toolkit"
+	repo  = "chriszarate/alfred-orion-toolkit"
 	query string
 	wf    *aw.Workflow
 )
