@@ -14,7 +14,6 @@ var (
 
 func init() {
 	wf = aw.New(update.GitHub(repo), aw.HelpURL(repo+"/issues"))
-
 }
 
 func main() {
@@ -27,10 +26,13 @@ func run() {
 	}
 	args := wf.Args()
 	switch args[0] {
+	case "bookmarks":
+		if err := searchBookmarks(); err != nil {
+			log.Fatalf("search failed with %s", err.Error())
+		}
 	case "history":
 		if err := searchHistory(); err != nil {
 			log.Fatalf("search failed with %s", err.Error())
 		}
-		//TODO: more action such as tab searching
 	}
 }

@@ -26,7 +26,11 @@ ORDER BY count(visits.visit_time) DESC
 func searchHistory() error {
 	showUpdateStatus()
 
-	home, _ := os.UserHomeDir()
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return err
+	}
+
 	dbPath := filepath.Join(home, DBPath)
 	db, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
