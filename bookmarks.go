@@ -4,36 +4,9 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-
-  "howett.net/plist"
 )
 
-type BookmarkList map[string]Bookmark
-
-type Bookmark struct {
-	Keyword string `plist:"keyword"`
-	Title string `plist:"title"`
-	Type string `plist:"type"`
-	Url string `plist:"url"`
-}
-
-const PListPath = "/Library/Application Support/Orion/Defaults/favourites.plist"
-
-func Readfile(filename string) (*BookmarkList, error) {
-	file, err := os.Open(filename)
-	if err != nil {
-		return nil, err
-	}
-
-	d := plist.NewDecoder(file)
-	var bookmarks BookmarkList
-	err = d.Decode(&bookmarks)
-	if err != nil {
-		return nil, err
-	}
-
-	return &bookmarks, nil
-}
+const BookmarkPListPath = "/Library/Application Support/Orion/Defaults/favourites.plist"
 
 func searchBookmarks() error {
 	showUpdateStatus()
@@ -43,9 +16,9 @@ func searchBookmarks() error {
 		return err
 	}
 
-	plistPath := filepath.Join(home, PListPath)
+	plistPath := filepath.Join(home, BookmarkPListPath)
 
-	b, err := Readfile(plistPath)
+	b, err := ReadPlist[BookmarkList](plistPath)
 	if err != nil {
 		return err
 	}
@@ -68,7 +41,7 @@ func searchBookmarks() error {
 			Arg(item.Url)
 	}
 
-	wf.WarnEmpty("No matching history found", "Try another search?")
+	wf.WarnEmpty("No matching bookmarks found", "Try another search?")
 	wf.SendFeedback()
 	return nil
 }

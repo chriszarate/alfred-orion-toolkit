@@ -30,6 +30,10 @@ func run() {
 		if err := searchBookmarks(); err != nil {
 			log.Fatalf("search failed with %s", err.Error())
 		}
+	case "reading-list":
+		if err := searchReadingList(); err != nil {
+			log.Fatalf("search failed with %s", err.Error())
+		}
 	case "history":
 		if err := searchHistory(); err != nil {
 			log.Fatalf("search failed with %s", err.Error())

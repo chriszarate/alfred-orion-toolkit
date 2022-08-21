@@ -33,6 +33,29 @@
 		</array>
 		<key>7D2F8AD8-A854-44E9-A308-D22CB7F1A259</key>
 		<array/>
+		<key>9A7F3EC9-FD5A-4689-9520-42371DB81C89</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D23DC58E-C6C0-46AD-ABB8-9D684B115B21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB9AC903-CF84-426B-AA55-4D9B25783821</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>ADCEDA69-7C6C-4981-845E-8551F9FB3BFE</key>
 		<array>
 			<dict>
@@ -193,7 +216,7 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -249,6 +272,97 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open -a "/Applications/Orion.app" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D23DC58E-C6C0-46AD-ABB8-9D684B115B21</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>or</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./alfred-orion-toolkit reading-list</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search Orion's reading list</string>
+				<key>title</key>
+				<string>Orion Reading List Search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9A7F3EC9-FD5A-4689-9520-42371DB81C89</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>AB9AC903-CF84-426B-AA55-4D9B25783821</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -282,12 +396,33 @@
 			<key>ypos</key>
 			<integer>290</integer>
 		</dict>
+		<key>9A7F3EC9-FD5A-4689-9520-42371DB81C89</key>
+		<dict>
+			<key>xpos</key>
+			<integer>180</integer>
+			<key>ypos</key>
+			<integer>980</integer>
+		</dict>
+		<key>AB9AC903-CF84-426B-AA55-4D9B25783821</key>
+		<dict>
+			<key>xpos</key>
+			<integer>580</integer>
+			<key>ypos</key>
+			<integer>1130</integer>
+		</dict>
 		<key>ADCEDA69-7C6C-4981-845E-8551F9FB3BFE</key>
 		<dict>
 			<key>xpos</key>
 			<integer>180</integer>
 			<key>ypos</key>
 			<integer>140</integer>
+		</dict>
+		<key>D23DC58E-C6C0-46AD-ABB8-9D684B115B21</key>
+		<dict>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>905</integer>
 		</dict>
 		<key>DEF5B524-0B2F-43A7-8866-68756232B040</key>
 		<dict>
@@ -298,7 +433,7 @@
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chriszarate/alfred-orion-toolkit</string>
 </dict>

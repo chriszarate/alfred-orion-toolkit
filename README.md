@@ -6,6 +6,7 @@ This is an [Alfred](https://www.alfredapp.com) workflow for [Kagi's Orion browse
 
 - `ob` to search Orion bookmarks
 - `oh` to search Orion history
+- `or` to search Orion reading list
 
 ## Install
 
